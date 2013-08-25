@@ -6,6 +6,10 @@
 <p>
 
 <p>
+	<h2>Created by <%= @book.user_email %></h2>
+</p>
+
+<p>
 	Title: <%= @book.title %>
 </p>
 
@@ -30,7 +34,9 @@
 </p>
 
 <p>
-	<%= link_to "Edit this book", edit_book_path(@book) %>
+	<% if user_signed_in? && @edit_allowed %>
+		<%= link_to "Edit", edit_book_path(@book) %>
+	<% end %>
 </p>
 
 <p>

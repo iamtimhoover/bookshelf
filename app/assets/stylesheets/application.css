@@ -84,7 +84,10 @@ p{
 }
 
 
-.wrapper{
+.signup{
+	width:60%;
+	margin:100px auto;
+	background:#cccccc;
 }
 
 
