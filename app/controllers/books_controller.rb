@@ -31,6 +31,11 @@ class BooksController < ApplicationController
 		redirect_to	book_path(params[:id])
 	end
 
+	def search
+		@query = params[:q]
+		@books = Book.search_for(@query)
+	end
+
 	def destroy
 		@book = Book.find(params[:id])
 		if @book.destroy

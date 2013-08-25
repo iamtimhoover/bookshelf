@@ -1,8 +1,16 @@
 <h1>My BookShelf</h1>
 
-<%= render partial: 'book_list' %>
-
 <p>
-<%= link_to "Add a new book", books_new_path %>
+<%= link_to "Add a new book", new_book_path %>
 </p>
+
+<%= form_tag books_search_path, method: :get do %>
+	<%= label_tag(:q, "Search For:") %>
+	<%= text_field_tag (:q) %>
+	<%= submit_tag("Search") %>
+<% end %>
+
+<%= render partial: 'books_list' %>
+
+
 

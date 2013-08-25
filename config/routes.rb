@@ -1,4 +1,4 @@
 Books::Application.routes.draw do
-  get 'books/new', to: 'books#new', as: 'books_new'
+  get 'books/search', to: 'books#search', as: 'books_search'
   resources :books
 end
