@@ -1,0 +1,35 @@
+<h1>Show Book</h1>
+
+<p>
+	<%= "#{@error_message}" %>
+
+<p>
+
+<p>
+	Title: <%= @book.title %>
+</p>
+
+<p>
+	Author: <%= @book.author %>
+</p>
+
+<p>
+	The movie was made in: <%= @book.year %>
+</p>
+
+<p>
+	Rating: <%= @book.rating %>
+</p>
+
+<p>
+	<%= link_to 'Delete', book_path, method: :delete %>
+</p>
+
+<p>
+	<%= link_to "Edit this book", edit_book_path(@book) %>
+</p>
+
+<p>
+<%= link_to "View all books", books_path %>
+</p>
+

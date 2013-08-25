@@ -1,0 +1,31 @@
+<ul>
+	<% @books.each do |book| %>
+
+		<li>
+			<%= link_to book_path(book) do %>
+			<p>
+				Title: <%= book.title %>
+			</p>
+			<% end %>
+			<p>
+				Author: <%= book.author %>
+			</p>
+
+			<p>
+				The movie was made in: <%= book.year %>
+			</p>
+
+			<p>
+				Rating: <%= book.rating %>
+			</p>
+
+			
+
+
+
+		</li>
+
+	<% end %>
+
+
+</ul>

@@ -1,0 +1,31 @@
+<% if @book.errors.any? %>
+	<h2>There were errors saving your book!</h2>
+	<ul>
+		<% @book.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+	</ul>
+<% end %>
+
+<%= form_for @book do |f| %>
+
+<div>
+<%= f.label :title %>
+<%= f.text_field :title %>
+</div>
+<div>
+<%= f.label :author %>
+<%= f.text_field :author %>
+</div>
+<div>
+<%= f.label :year %>
+<%= f.text_field :year %>
+</div>
+<div>
+<%= f.label :rating %>
+<%= f.text_area :rating %>
+</div>
+<div>
+<%= f.submit %>
+</div>
+<% end %>
