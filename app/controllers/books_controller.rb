@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
 	before_action :find_book, only: [:update, :edit, :show]
-	before_filter :authenticate_user!
+	before_filter :authenticate_user!, only: [:edit, :destroy]
 
 	def index
 		@books = Book.all
@@ -14,7 +14,6 @@ class BooksController < ApplicationController
 		@book = Book.find(params[:id])
 		@edit_allowed = validate_current_user
 		@destroy_allowed = validate_current_user
-
 	end
 
 	def create
